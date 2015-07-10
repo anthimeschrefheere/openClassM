@@ -1,4 +1,5 @@
 from django.db import models
+from django.forms import ModelForm
 
 class Forum(models.Model):  
     title = models.CharField(max_length=60)
@@ -19,3 +20,8 @@ class Post(models.Model):
     pub_date = models.DateTimeField(auto_now_add=True)
     def __unicode__(self):
         return self.title
+
+
+Forum(title="Forum sur les maths" ).save()
+Forum(title="Forum sur la physique" ).save()
+Forum(title="Forum sur l'informatique" ).save()

@@ -1,0 +1,14 @@
+<p>{{ forum_title }}: </p>
+
+<p><a href="/forum/"> Retour a la liste des forums </a> </p>
+
+{% if thread_list %}
+    <ul>
+{% for Thread in thread_list %}
+    <li><a href="/thread/{{ Thread.id }}/">{{ Thread.title }}</a></li>
+    {{ Thread.pub_date }}
+{% endfor %}
+    </ul>
+{% else %}
+    <p>Aucun sujet disponible</p>
+{% endif %}
