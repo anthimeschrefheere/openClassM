@@ -15,3 +15,9 @@
 {% else %}
     <p>Aucune reponse</p>
 {% endif %}
+
+<form action="/thread/{{ thread_info.id }}/" method="post">
+{% csrf_token %}
+{{ form.as_p }}
+<input type="submit" value="Submit" />
+</form>

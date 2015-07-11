@@ -21,7 +21,12 @@ class Post(models.Model):
     def __unicode__(self):
         return self.title
 
+class ThreadForm(ModelForm):
+    class Meta:
+        model = Thread
+        exclude = ('forum',)
 
-Forum(title="Forum sur les maths" ).save()
-Forum(title="Forum sur la physique" ).save()
-Forum(title="Forum sur l'informatique" ).save()
+class PostForm(ModelForm):
+    class Meta:
+        model = Post
+        exclude = ('thread',)
