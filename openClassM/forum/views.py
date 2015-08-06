@@ -1,3 +1,4 @@
+#-*- coding: utf-8 -*-
 from forum.models import Forum, Thread, Post, ThreadForm, PostForm
 from django.shortcuts import render_to_response
 from django.template import RequestContext

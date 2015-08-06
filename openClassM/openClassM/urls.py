@@ -17,7 +17,13 @@ from django.conf.urls import patterns,include, url
 from django.contrib import admin
 
 urlpatterns = patterns('',
-    url(r'^forum/$', 'forum.views.forum_dir'),
+    url(r'^admin/', include(admin.site.urls)),
+    url(r'^accueil/$', 'tutoriels.views.accueil_dir'),
+    url(r'^accueiltutoriels/$', 'tutoriels.views.categorie_dir'),
+    url(r'^tutoriels/(?P<categorie_id>\d+)/$', 'tutoriels.views.article_dir'),
+    url(r'^tutoriels/(?P<categorie_id>\d+)/(?P<article_id>\d+)/$', 'tutoriels.views.article_read'),
+    url(r'^accueilforum/$', 'forum.views.forum_dir'),
     url(r'^forum/(?P<forum_id>\d+)/$', 'forum.views.thread_dir'),
     url(r'^thread/(?P<thread_id>\d+)/$', 'forum.views.post_dir'),
+    url(r'^contact/$', 'contact.views.contact'),
     )

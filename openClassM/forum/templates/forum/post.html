@@ -1,4 +1,12 @@
-<p><a href="/forum/"> Retour a la liste des forums </a> </p>
+<!DOCTYPE html>
+
+<html lang="fr">
+{% extends "base.html" %}
+{% block title %}Les commentaires du sujet{% endblock %}
+
+{% block content %}
+
+<p><a href="/accueilforum/"> Retour a la liste des forums </a> </p>
 
 <p><a href="/forum/{{ thread_info.forum.id }}"> Retour a la liste des threads </a> </p>
 
@@ -21,3 +29,5 @@
 {{ form.as_p }}
 <input type="submit" value="Submit" />
 </form>
+
+{% endblock %}

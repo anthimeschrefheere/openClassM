@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+   <link rel="stylesheet" href="/static/css/style.css" />
+   <title>{% block title %}openClassM le site pour ceux du master bioinformatique nul en bioinformatique{% endblock %}</title>
+</head>
+<body>
+<header>openClassM</header>
+    <nav>
+       {% block nav %}
+       <ul>
+            <li><a href="/accueil/">Accueil</a></li>
+            <li><a href="/accueiltutoriels/">Tutoriels</a></li>
+            <li><a href="/accueilforum/">Forum</a></li>
+
+       </ul>
+       {% endblock %}
+   </nav>
+   <section id="content">
+       {% block content %}{% endblock %}
+   </section>
+<footer>&copy; openClassM</footer>
+</body>
+</html>

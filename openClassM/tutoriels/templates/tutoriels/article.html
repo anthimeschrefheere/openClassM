@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}La page d'accueil de la categorie{% endblock %}
+{% block content %}
+<h2>et voici la liste des tutoriels de la categorie {{categories_list}}</h2>
+
+<p>
+	{% if articles_list %}
+	<ul>
+		{% for Article in articles_list %}
+		<li><a href="/tutoriels/{{categorie_id}}/{{ Article.id }}/">{{ Article.titre }}</a></li>
+		<p>{{ Article.contenu|truncatewords_html:80 }}</p>
+		<p><a href="/tutoriels/{{categorie_id}}/{{ Article.id }}/">Lire la suite</a>
+		{% endfor %}
+	</ul>
+	{% else %}
+	<p>Aucune categorie disponible !</p>
+	{% endif %}
+
+</p>
+{% endblock %}
+

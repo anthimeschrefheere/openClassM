@@ -16,6 +16,7 @@ class Thread(models.Model):
 
 class Post(models.Model):
     thread = models.ForeignKey(Thread)
+    title = "test"
     content = models.TextField(max_length=10000)
     pub_date = models.DateTimeField(auto_now_add=True)
     def __unicode__(self):

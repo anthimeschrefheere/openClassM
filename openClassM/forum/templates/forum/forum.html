@@ -1,9 +1,17 @@
-{% if forum_list %}
-    <ul>
-{% for Forum in forum_list %}
-    <li><a href="/forum/{{ Forum.id }}/">{{ Forum.title }}</a></li>
-{% endfor %}
-    </ul>
-{% else %}
-    <p>Aucun forum disponible !</p>
-{% endif %}
+{% extends "base.html" %}
+{% block title %}La page d'accueil des forums{% endblock %}
+{% block content %}
+<h2>Une question à poser? choisissez le bon forum!</h2>
+<p>
+	{% if forum_list %}
+	<ul>
+		{% for Forum in forum_list %}
+		<li><a href="/forum/{{ Forum.id }}/">{{ Forum.title }}</a></li>
+		{% endfor %}
+	</ul>
+	{% else %}
+	<p>Aucun forum disponible !</p>
+	{% endif %}
+
+</p>
+{% endblock %}
